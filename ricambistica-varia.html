@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ricambistica varia | Ferrari & Carena</title>
+<meta name="description" content="Alberi eccentrici e bi-elicoidali, bielle, ingranaggi, rulli, ruote dentate, ricambi GKP e particolari speciali.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --graphite:#181B20;
+  --steel:#2A2F37;
+  --paper:#EDEFF1;
+  --line:#C8CDD3;
+  --ink:#23272E;
+  --machine-yellow:#F2B705;
+  --blue:#3A6EA5;
+  --mono:'IBM Plex Mono',monospace;
+  --display:'Archivo',sans-serif;
+  --body:'Inter',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.6;font-size:16px}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono)}
+h1,h2,h3,h4{font-family:var(--display);line-height:1.15;letter-spacing:-.01em}
+
+/* ===== TOPBAR ===== */
+.topbar{background:var(--graphite);color:#AEB4BC;font-size:13px}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:38px}
+.topbar a:hover{color:#fff}
+.topbar .langs{display:flex;gap:14px;font-family:var(--mono);font-size:12px}
+.topbar .langs a.active{color:var(--machine-yellow)}
+.topbar .contacts{display:flex;gap:20px}
+
+/* ===== NAV ===== */
+header{position:sticky;top:0;z-index:50;background:rgba(237,239,241,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.logo{font-family:var(--display);font-weight:800;font-size:19px;letter-spacing:-.02em;display:flex;align-items:center;gap:10px;white-space:nowrap}
+.logo .mark{width:34px;height:34px;border:2px solid var(--ink);display:grid;place-items:center;font-size:11px;font-family:var(--mono);position:relative;flex:none}
+.logo .mark::after{content:"";position:absolute;inset:-6px;border:1px dashed var(--line);pointer-events:none}
+.menu{display:flex;gap:22px;font-size:14px;font-weight:500}
+.menu>div{position:relative}
+.menu a{padding:8px 0;border-bottom:2px solid transparent;transition:border-color .15s;white-space:nowrap}
+.menu a:hover,.menu a.active{border-color:var(--machine-yellow)}
+.dropdown{position:absolute;top:100%;left:-12px;background:#fff;border:1px solid var(--line);min-width:240px;padding:8px 0;display:none;box-shadow:0 12px 30px rgba(24,27,32,.12)}
+.menu>div:hover .dropdown{display:block}
+.dropdown a{display:block;padding:9px 16px;border:none;font-weight:400;white-space:normal}
+.dropdown a:hover{background:var(--paper)}
+.cta-nav{background:var(--graphite);color:#fff;padding:10px 18px;font-weight:600;font-size:14px;transition:background .15s;white-space:nowrap}
+.cta-nav:hover{background:var(--blue)}
+.burger{display:none;background:none;border:1px solid var(--ink);padding:8px 10px;font-family:var(--mono);font-size:12px;cursor:pointer}
+
+/* ===== HERO (home) ===== */
+.hero{background:var(--graphite);color:#fff;position:relative;overflow:hidden}
+.hero::before,.page-hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:56px 56px}
+.hero .wrap{position:relative;padding:96px 24px 88px;display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+.eyebrow{font-family:var(--mono);font-size:13px;color:var(--machine-yellow);letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--machine-yellow)}
+.hero h1{font-size:clamp(38px,5.4vw,64px);font-weight:800;color:#fff;margin-bottom:22px}
+.hero h1 em{font-style:normal;color:var(--machine-yellow)}
+.hero p{color:#B9BFC7;max-width:520px;font-size:17px;margin-bottom:34px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 26px;font-weight:600;font-size:15px;transition:all .15s;cursor:pointer}
+.btn-y{background:var(--machine-yellow);color:var(--graphite)}
+.btn-y:hover{background:#fff}
+.btn-ghost{border:1px solid #4A5058;color:#fff}
+.btn-ghost:hover{border-color:var(--machine-yellow);color:var(--machine-yellow)}
+
+/* ===== PAGE HERO (internal pages) ===== */
+.page-hero{background:var(--graphite);color:#fff;position:relative;overflow:hidden}
+.page-hero .wrap{position:relative;padding:64px 24px 56px}
+.crumb{font-family:var(--mono);font-size:12.5px;color:#8B929B;margin-bottom:16px;letter-spacing:.06em}
+.crumb a:hover{color:var(--machine-yellow)}
+.crumb .sep{margin:0 8px;color:#4A5058}
+.page-hero h1{font-size:clamp(32px,4.4vw,52px);font-weight:800;color:#fff;max-width:840px}
+.page-hero .lede{color:#B9BFC7;max-width:680px;font-size:17px;margin-top:18px}
+
+/* spec card */
+.spec-card{border:1px solid #3A4048;padding:34px 30px;position:relative;background:rgba(255,255,255,.02)}
+.spec-card::before,.spec-card::after{content:"";position:absolute;width:14px;height:14px;border:1px solid var(--machine-yellow)}
+.spec-card::before{top:-7px;left:-7px;border-right:none;border-bottom:none}
+.spec-card::after{bottom:-7px;right:-7px;border-left:none;border-top:none}
+.spec-title{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:#8B929B;text-transform:uppercase;margin-bottom:24px}
+.spec-row{display:flex;justify-content:space-between;align-items:baseline;padding:13px 0;border-bottom:1px dashed #3A4048;gap:16px}
+.spec-row:last-child{border-bottom:none}
+.spec-row .k{font-size:14px;color:#B9BFC7}
+.spec-row .v{font-family:var(--mono);font-size:15px;color:#fff;text-align:right}
+.spec-row .v b{color:var(--machine-yellow);font-weight:500}
+
+/* ===== STATS ===== */
+.stats{background:var(--machine-yellow)}
+.stats .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
+.stat{padding:30px 24px;border-left:1px solid rgba(24,27,32,.18)}
+.stat:first-child{border-left:none}
+.stat .n{font-family:var(--display);font-weight:800;font-size:40px;color:var(--graphite);line-height:1}
+.stat .l{font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--graphite);margin-top:8px;opacity:.75}
+
+/* ===== SECTIONS / CONTENT ===== */
+section{padding:80px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:48px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(28px,3.6vw,42px);font-weight:800}
+.sec-head p{max-width:440px;color:#5A6069;font-size:15px}
+
+.content{padding:72px 0}
+.content .wrap{max-width:980px}
+.content h2{font-size:clamp(24px,3vw,34px);margin:52px 0 18px}
+.content h2:first-child{margin-top:0}
+.content h3{font-size:20px;margin:36px 0 12px}
+.content p{color:#4A5058;margin-bottom:16px;max-width:74ch}
+.content ul{margin:0 0 20px 0;list-style:none}
+.content ul li{padding:10px 0 10px 26px;border-bottom:1px dashed var(--line);position:relative;color:#4A5058;font-size:15px}
+.content ul li::before{content:"—";position:absolute;left:0;color:var(--machine-yellow);font-family:var(--mono)}
+.content strong{color:var(--ink)}
+.content .note{border-left:3px solid var(--machine-yellow);background:#fff;padding:18px 22px;margin:26px 0;font-size:15px;color:#4A5058}
+.content .img-frame{border:1px solid var(--line);background:#fff;padding:10px;margin:26px 0}
+.content .img-frame img{width:100%}
+.content .img-frame .cap{font-family:var(--mono);font-size:12px;color:#8B929B;padding:10px 4px 2px;letter-spacing:.06em}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:26px 0}
+.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--line);background:#fff}
+.tbl{width:100%;border-collapse:collapse;margin:24px 0;background:#fff;border:1px solid var(--line);font-size:14px}
+.tbl th{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-align:left;padding:12px 16px;background:var(--graphite);color:var(--machine-yellow);font-weight:500}
+.tbl td{padding:11px 16px;border-top:1px solid var(--line);color:#4A5058}
+.tbl td:last-child{font-family:var(--mono);font-size:13px;color:var(--ink)}
+.dl-inline{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);background:#fff;padding:14px 20px;margin:8px 12px 8px 0;font-weight:600;font-size:14px;transition:all .15s}
+.dl-inline:hover{border-color:var(--graphite);transform:translateY(-2px)}
+.dl-inline .ext{font-family:var(--mono);font-size:10px;background:var(--graphite);color:var(--machine-yellow);padding:3px 7px;letter-spacing:.1em}
+
+/* parts list grid */
+.parts-cols{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:10px}
+.parts-cols h3{margin-top:0}
+
+/* services grid (home + related) */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.card{background:var(--paper);padding:34px 28px;transition:background .15s;position:relative}
+.card:hover{background:#fff}
+.card .code{font-family:var(--mono);font-size:12px;color:#8B929B;margin-bottom:18px;display:block}
+.card h3{font-size:19px;margin-bottom:12px;font-weight:700}
+.card p{font-size:14.5px;color:#5A6069;margin-bottom:18px}
+.card a{font-family:var(--mono);font-size:13px;color:var(--blue);font-weight:500}
+.card a:hover{color:var(--graphite)}
+.card:hover .code{color:var(--machine-yellow)}
+
+/* fine blanking feature (home) */
+.fb{background:var(--graphite);color:#fff}
+.fb .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.fb h2{font-size:clamp(28px,3.8vw,42px);color:#fff;margin-bottom:20px}
+.fb p{color:#B9BFC7;margin-bottom:16px}
+.fb-list{display:grid;margin-top:26px;border-top:1px solid #3A4048}
+.fb-list a{display:flex;justify-content:space-between;align-items:center;padding:16px 4px;border-bottom:1px solid #3A4048;font-weight:500;font-size:15px;transition:padding .15s}
+.fb-list a span.arrow{font-family:var(--mono);color:var(--machine-yellow)}
+.fb-list a:hover{padding-left:14px;color:var(--machine-yellow)}
+.press-badge{border:1px solid #3A4048;padding:40px 34px;text-align:left;position:relative}
+.press-badge .nov{display:inline-block;background:var(--machine-yellow);color:var(--graphite);font-family:var(--mono);font-size:11px;letter-spacing:.14em;padding:5px 10px;margin-bottom:22px;font-weight:500}
+.press-badge .big{font-family:var(--display);font-weight:800;font-size:clamp(46px,6vw,74px);line-height:.95;color:#fff}
+.press-badge .unit{color:var(--machine-yellow)}
+.press-badge .sub{font-family:var(--mono);font-size:13px;color:#8B929B;margin-top:14px;letter-spacing:.08em;text-transform:uppercase}
+.dim{position:absolute;font-family:var(--mono);font-size:11px;color:#6A7079}
+.dim.top{top:-9px;left:50%;transform:translateX(-50%);background:var(--graphite);padding:0 10px}
+
+/* about + timeline (home) */
+.about{background:#fff}
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.about h2{font-size:clamp(28px,3.6vw,40px);margin-bottom:22px}
+.about p{color:#4A5058;margin-bottom:16px}
+.timeline{border-left:2px solid var(--line);padding-left:28px;display:grid;gap:26px;margin-top:8px}
+.tl-item{position:relative}
+.tl-item::before{content:"";position:absolute;left:-35px;top:6px;width:12px;height:12px;background:var(--paper);border:2px solid var(--graphite)}
+.tl-item.hl::before{background:var(--machine-yellow);border-color:var(--graphite)}
+.tl-item .y{font-family:var(--mono);font-size:13px;color:var(--blue);font-weight:500}
+.tl-item .t{font-weight:600;font-family:var(--display)}
+.tl-item .d{font-size:14px;color:#5A6069}
+
+/* capabilities rows */
+.cap{background:#fff}
+.cap-rows{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.cap-row{background:#fff;display:grid;grid-template-columns:200px 1fr 200px;gap:24px;align-items:center;padding:26px 28px}
+.cap-row .lab{font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#8B929B}
+.cap-row .desc{font-size:15px;color:#4A5058}
+.cap-row .val{font-family:var(--mono);font-size:20px;text-align:right;color:var(--graphite)}
+.cap-row .val b{color:var(--blue);font-weight:500}
+.cap-row:hover{background:var(--paper)}
+
+/* downloads */
+.dl .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.dl a.doc{border:1px solid var(--line);background:#fff;padding:26px;display:flex;flex-direction:column;gap:14px;transition:all .15s}
+.dl a.doc:hover{border-color:var(--graphite);transform:translateY(-3px)}
+.dl .ext{font-family:var(--mono);font-size:11px;background:var(--graphite);color:var(--machine-yellow);align-self:flex-start;padding:4px 8px;letter-spacing:.1em}
+.dl .doc h4{font-size:16px;font-weight:600}
+.dl .doc span.get{font-family:var(--mono);font-size:13px;color:var(--blue)}
+
+/* CTA band */
+.cta-band{background:var(--machine-yellow)}
+.cta-band .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:44px 24px;flex-wrap:wrap}
+.cta-band h2{font-size:clamp(22px,2.8vw,32px);color:var(--graphite)}
+.cta-band .btn{background:var(--graphite);color:#fff}
+.cta-band .btn:hover{background:#000}
+
+/* contacts */
+.contatti{background:var(--graphite);color:#fff}
+.contatti h2{color:#fff}
+.contatti .sec-head p{color:#8B929B}
+.loc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#3A4048;border:1px solid #3A4048;margin-bottom:56px}
+.loc{background:var(--graphite);padding:30px 26px}
+.loc .tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--machine-yellow);margin-bottom:16px}
+.loc h4{font-size:17px;color:#fff;margin-bottom:10px}
+.loc p{font-size:14px;color:#B9BFC7;margin-bottom:6px}
+.loc a{color:#fff;font-family:var(--mono);font-size:14px}
+.loc a:hover{color:var(--machine-yellow)}
+.loc .maplink{font-size:13px;color:var(--machine-yellow);font-family:var(--body)}
+.emails{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#3A4048;border:1px solid #3A4048}
+.em{background:var(--graphite);padding:22px 26px;display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}
+.em .role{font-size:14px;color:#B9BFC7}
+.em a{font-family:var(--mono);font-size:14px;color:#fff}
+.em a:hover{color:var(--machine-yellow)}
+
+/* footer */
+footer{background:#101216;color:#8B929B;font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;padding:26px 24px;gap:20px;flex-wrap:wrap}
+footer a:hover{color:#fff}
+footer .links{display:flex;gap:22px;flex-wrap:wrap}
+
+@media(max-width:980px){
+  .hero .wrap,.about .wrap,.fb .wrap,.two-col,.parts-cols{grid-template-columns:1fr;gap:44px}
+  .grid,.dl .grid3,.loc-grid{grid-template-columns:1fr 1fr}
+  .cap-row{grid-template-columns:1fr;gap:8px}
+  .cap-row .val{text-align:left}
+  .menu{display:none}
+  .menu.open{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:#fff;padding:20px 24px;border-bottom:1px solid var(--line);gap:4px;max-height:70vh;overflow:auto}
+  .menu.open .dropdown{display:block;position:static;box-shadow:none;border:none;padding-left:14px}
+  .burger{display:block}
+  .topbar .contacts span.hide-m{display:none}
+}
+@media(max-width:600px){
+  .grid,.dl .grid3,.loc-grid,.emails,.gallery{grid-template-columns:1fr}
+  .stats .wrap{grid-template-columns:1fr}
+  .stat{border-left:none;border-top:1px solid rgba(24,27,32,.18)}
+  section,.content{padding:56px 0}
+  .gallery{grid-template-columns:1fr 1fr}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="contacts">
+      <a href="mailto:info@ferraricarena.it">info@ferraricarena.it</a>
+      <a href="tel:+39011496688"><span class="hide-m">Tel. </span>+39 011 496688</a>
+    </div>
+    <div class="langs"><a class="active" href="ricambistica-varia.html">IT</a><a href="en/ricambistica-varia.html">EN</a><a href="de/ricambistica-varia.html">DE</a></div>
+  </div>
+</div>
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="index.html"><span class="mark">F&C</span> Ferrari & Carena</a>
+      <div class="menu" id="menu">
+        <div>
+          <a href="chi-siamo.html">Azienda ▾</a>
+          <div class="dropdown">
+            <a href="chi-siamo.html">Chi siamo</a>
+            <a href="struttura.html">Struttura & Parco macchine</a>
+            <a href="ri-produzione.html">Ri-produzione</a>
+          </div>
+        </div>
+        <div>
+          <a href="lavorazioni-meccaniche.html">Lavorazioni ▾</a>
+          <div class="dropdown">
+            <a href="stampa-3d.html">Stampa 3D</a>
+            <a href="industria-4-0.html">Industria 4.0</a>
+            <a href="lavorazioni-meccaniche.html">Lavorazioni meccaniche</a>
+            <a href="collaudo-qualita.html">Collaudo & Qualità</a>
+          </div>
+        </div>
+        <div>
+          <a href="tranciatura-fine.html">Fine Blanking ▾</a>
+          <div class="dropdown">
+            <a href="tranciatura-fine.html">Tranciatura fine</a>
+            <a href="presse-tranciatura-fine.html">Presse di tranciatura fine</a>
+            <a href="parti-interne.html">Parti interne</a>
+            <a href="parti-esterne.html">Parti esterne</a>
+            <a href="servizio-manutenzione.html">Servizio manutenzione</a>
+            <a href="progettazioni.html">Progettazioni</a>
+          </div>
+        </div>
+        <div><a href="retrofitting.html">Retrofitting</a></div>
+        <div><a href="alimentazione-asservimenti.html">Asservimenti</a></div>
+        <div><a href="ricambistica-varia.html" class="active">Ricambistica</a></div>
+        <div><a href="fc-plast.html">F&C PLAST</a></div>
+      </div>
+      <a class="cta-nav" href="index.html#contatti">Richiedi offerta</a>
+      <button class="burger" onclick="document.getElementById('menu').classList.toggle('open')">MENU</button>
+    </nav>
+  </div>
+</header>
+
+
+<div class="page-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">Home</a><span class="sep">/</span>Servizi</div>
+    <h1>Ricambistica varia</h1>
+    <p class="lede">Alberi, bielle, ingranaggi, rulli e particolari speciali, anche per applicazioni aerospaziali.</p>
+  </div>
+</div>
+
+<div class="content">
+  <div class="wrap">
+    <h2>Alberi bi-elicoidali</h2>
+    <div class="gallery"><img src="https://www.ferraricarena.it/images/alberi-bi-elicoidali/alberi-bi-elicoidali-01.jpg" alt="Albero bi-elicoidale" loading="lazy"><img src="https://www.ferraricarena.it/images/alberi-bi-elicoidali/alberi-bi-elicoidali-02.jpg" alt="Albero bi-elicoidale" loading="lazy"><img src="https://www.ferraricarena.it/images/alberi-bi-elicoidali/alberi-bi-elicoidali-03.jpg" alt="Albero bi-elicoidale" loading="lazy"><img src="https://www.ferraricarena.it/images/alberi-bi-elicoidali/alberi-bi-elicoidali-04.jpg" alt="Albero bi-elicoidale" loading="lazy"></div>
+    <h2>Alberi eccentrici</h2>
+    <div class="gallery"><img src="https://www.ferraricarena.it/images/alberi-eccentrici/alberi-eccentrici-01.jpg" alt="Albero eccentrico" loading="lazy"><img src="https://www.ferraricarena.it/images/alberi-eccentrici/alberi-eccentrici-02.jpg" alt="Albero eccentrico" loading="lazy"><img src="https://www.ferraricarena.it/images/alberi-eccentrici/alberi-eccentrici-03.jpg" alt="Albero eccentrico" loading="lazy"><img src="https://www.ferraricarena.it/images/alberi-eccentrici/alberi-eccentrici-04.jpg" alt="Albero eccentrico" loading="lazy"><img src="https://www.ferraricarena.it/images/alberi-eccentrici/alberi-eccentrici-05.jpg" alt="Albero eccentrico" loading="lazy"><img src="https://www.ferraricarena.it/images/alberi-eccentrici/alberi-eccentrici-06.jpg" alt="Albero eccentrico" loading="lazy"><img src="https://www.ferraricarena.it/images/alberi-eccentrici/alberi-eccentrici-07.jpg" alt="Albero eccentrico" loading="lazy"><img src="https://www.ferraricarena.it/images/alberi-eccentrici/alberi-eccentrici-08.jpg" alt="Albero eccentrico" loading="lazy"><img src="https://www.ferraricarena.it/images/alberi-eccentrici/alberi-eccentrici-09.jpg" alt="Albero eccentrico" loading="lazy"></div>
+    <h2>Alberi meccanici</h2>
+    <div class="gallery"><img src="https://www.ferraricarena.it/images/alberi-meccanici/alberi-meccanici-01.jpg" alt="Albero meccanico" loading="lazy"><img src="https://www.ferraricarena.it/images/alberi-meccanici/alberi-meccanici-02.jpg" alt="Albero meccanico" loading="lazy"></div>
+    <h2>Bielle</h2>
+    <div class="gallery"><img src="https://www.ferraricarena.it/images/bielle/bielle-01.jpg" alt="Biella per pressa" loading="lazy"><img src="https://www.ferraricarena.it/images/bielle/bielle-02.jpg" alt="Biella per pressa" loading="lazy"><img src="https://www.ferraricarena.it/images/bielle/bielle-03.jpg" alt="Biella per pressa" loading="lazy"><img src="https://www.ferraricarena.it/images/bielle/bielle-04.jpg" alt="Biella per pressa" loading="lazy"><img src="https://www.ferraricarena.it/images/bielle/bielle-05.jpg" alt="Biella per pressa" loading="lazy"><img src="https://www.ferraricarena.it/images/bielle/bielle-06.jpg" alt="Biella per pressa" loading="lazy"><img src="https://www.ferraricarena.it/images/bielle/bielle-07.jpg" alt="Biella per pressa" loading="lazy"><img src="https://www.ferraricarena.it/images/bielle/bielle-08.jpg" alt="Biella per pressa" loading="lazy"><img src="https://www.ferraricarena.it/images/bielle/bielle-09.jpg" alt="Biella per pressa" loading="lazy"><img src="https://www.ferraricarena.it/images/bielle/bielle-10.jpg" alt="Biella per pressa" loading="lazy"></div>
+    <h2>Ingranaggi</h2>
+    <div class="gallery"><img src="https://www.ferraricarena.it/images/ingranaggi/ingranaggi-01.jpg" alt="Ingranaggio" loading="lazy"><img src="https://www.ferraricarena.it/images/ingranaggi/ingranaggi-02.jpg" alt="Ingranaggio" loading="lazy"></div>
+    <h2>Particolari aerospaziali</h2>
+    <div class="gallery"><img src="https://www.ferraricarena.it/images/aerospazio/aerospazio-01.jpg" alt="Particolare aerospaziale" loading="lazy"><img src="https://www.ferraricarena.it/images/aerospazio/aerospazio-02.jpg" alt="Particolare aerospaziale" loading="lazy"></div>
+    <h2>Particolari speciali</h2>
+    <div class="gallery"><img src="https://www.ferraricarena.it/images/particolari-speciali/particolari-speciali-01.jpg" alt="Particolare speciale" loading="lazy"><img src="https://www.ferraricarena.it/images/particolari-speciali/particolari-speciali-02.jpg" alt="Particolare speciale" loading="lazy"><img src="https://www.ferraricarena.it/images/particolari-speciali/particolari-speciali-03.jpg" alt="Particolare speciale" loading="lazy"><img src="https://www.ferraricarena.it/images/particolari-speciali/particolari-speciali-04.jpg" alt="Particolare speciale" loading="lazy"><img src="https://www.ferraricarena.it/images/particolari-speciali/particolari-speciali-05.jpg" alt="Particolare speciale" loading="lazy"><img src="https://www.ferraricarena.it/images/particolari-speciali/particolari-speciali-06.jpg" alt="Particolare speciale" loading="lazy"><img src="https://www.ferraricarena.it/images/particolari-speciali/particolari-speciali-07.jpg" alt="Particolare speciale" loading="lazy"><img src="https://www.ferraricarena.it/images/particolari-speciali/particolari-speciali-08.jpg" alt="Particolare speciale" loading="lazy"><img src="https://www.ferraricarena.it/images/particolari-speciali/particolari-speciali-09.jpg" alt="Particolare speciale" loading="lazy"><img src="https://www.ferraricarena.it/images/particolari-speciali/particolari-speciali-10.jpg" alt="Particolare speciale" loading="lazy"><img src="https://www.ferraricarena.it/images/particolari-speciali/particolari-speciali-11.jpg" alt="Particolare speciale" loading="lazy"><img src="https://www.ferraricarena.it/images/particolari-speciali/particolari-speciali-12.jpg" alt="Particolare speciale" loading="lazy"><img src="https://www.ferraricarena.it/images/particolari-speciali/particolari-speciali-13.jpg" alt="Particolare speciale" loading="lazy"><img src="https://www.ferraricarena.it/images/particolari-speciali/particolari-speciali-14.jpg" alt="Particolare speciale" loading="lazy"><img src="https://www.ferraricarena.it/images/particolari-speciali/particolari-speciali-15.jpg" alt="Particolare speciale" loading="lazy"></div>
+    <h2>Pignoni bi-elicoidali</h2>
+    <div class="gallery"><img src="https://www.ferraricarena.it/images/pignoni/pignoni-01.jpg" alt="Pignone bi-elicoidale" loading="lazy"><img src="https://www.ferraricarena.it/images/pignoni/pignoni-02.jpg" alt="Pignone bi-elicoidale" loading="lazy"><img src="https://www.ferraricarena.it/images/pignoni/pignoni-03.jpg" alt="Pignone bi-elicoidale" loading="lazy"></div>
+    <h2>Ricambi compatibili presse meccaniche GKP</h2>
+    <div class="gallery"><img src="https://www.ferraricarena.it/images/ricambi-gkp/ricambi-gkp-01.jpg" alt="Ricambio pressa GKP" loading="lazy"><img src="https://www.ferraricarena.it/images/ricambi-gkp/ricambi-gkp-02.jpg" alt="Ricambio pressa GKP" loading="lazy"><img src="https://www.ferraricarena.it/images/ricambi-gkp/ricambi-gkp-03.jpg" alt="Ricambio pressa GKP" loading="lazy"><img src="https://www.ferraricarena.it/images/ricambi-gkp/ricambi-gkp-04.jpg" alt="Ricambio pressa GKP" loading="lazy"><img src="https://www.ferraricarena.it/images/ricambi-gkp/ricambi-gkp-05.jpg" alt="Ricambio pressa GKP" loading="lazy"><img src="https://www.ferraricarena.it/images/ricambi-gkp/ricambi-gkp-06.jpg" alt="Ricambio pressa GKP" loading="lazy"><img src="https://www.ferraricarena.it/images/ricambi-gkp/ricambi-gkp-07.jpg" alt="Ricambio pressa GKP" loading="lazy"></div>
+    <h2>Rulli</h2>
+    <div class="gallery"><img src="https://www.ferraricarena.it/images/rulli/rulli-01.jpg" alt="Rullo per pressa" loading="lazy"><img src="https://www.ferraricarena.it/images/rulli/rulli-02.jpg" alt="Rullo per pressa" loading="lazy"><img src="https://www.ferraricarena.it/images/rulli/rulli-03.jpg" alt="Rullo per pressa" loading="lazy"><img src="https://www.ferraricarena.it/images/rulli/rulli-04.jpg" alt="Rullo per pressa" loading="lazy"><img src="https://www.ferraricarena.it/images/rulli/rulli-05.jpg" alt="Rullo per pressa" loading="lazy"><img src="https://www.ferraricarena.it/images/rulli/rulli-06.jpg" alt="Rullo per pressa" loading="lazy"><img src="https://www.ferraricarena.it/images/rulli/rulli-07.jpg" alt="Rullo per pressa" loading="lazy"><img src="https://www.ferraricarena.it/images/rulli/rulli-08.jpg" alt="Rullo per pressa" loading="lazy"><img src="https://www.ferraricarena.it/images/rulli/rulli-09.jpg" alt="Rullo per pressa" loading="lazy"></div>
+    <h2>Ruote dentate</h2>
+    <div class="gallery"><img src="https://www.ferraricarena.it/images/ruote-dentate/ruote-dentate-01.jpg" alt="Ruota dentata" loading="lazy"><img src="https://www.ferraricarena.it/images/ruote-dentate/ruote-dentate-02.jpg" alt="Ruota dentata" loading="lazy"><img src="https://www.ferraricarena.it/images/ruote-dentate/ruote-dentate-03.jpg" alt="Ruota dentata" loading="lazy"><img src="https://www.ferraricarena.it/images/ruote-dentate/ruote-dentate-04.jpg" alt="Ruota dentata" loading="lazy"><img src="https://www.ferraricarena.it/images/ruote-dentate/ruote-dentate-05.jpg" alt="Ruota dentata" loading="lazy"><img src="https://www.ferraricarena.it/images/ruote-dentate/ruote-dentate-06.jpg" alt="Ruota dentata" loading="lazy"><img src="https://www.ferraricarena.it/images/ruote-dentate/ruote-dentate-07.jpg" alt="Ruota dentata" loading="lazy"><img src="https://www.ferraricarena.it/images/ruote-dentate/ruote-dentate-08.jpg" alt="Ruota dentata" loading="lazy"></div>
+    <h2>Viti di regolazione</h2>
+    <div class="gallery"><img src="https://www.ferraricarena.it/images/vite-regolazione2/vite-regolazione-01.jpg" alt="Vite di regolazione" loading="lazy"><img src="https://www.ferraricarena.it/images/vite-regolazione2/vite-regolazione-02.jpg" alt="Vite di regolazione" loading="lazy"></div>
+    
+<div class="cta-band">
+  <div class="wrap">
+    <h2>Avete un ricambio introvabile o una pressa ferma?</h2>
+    <a class="btn" href="mailto:info@ferraricarena.it">Richiedete un'offerta</a>
+  </div>
+</div>
+
+  </div>
+</div>
+
+<section class="contatti" id="contatti">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Contatti</h2>
+      <p>Tre stabilimenti nel torinese, un unico punto di riferimento per la vostra produzione.</p>
+    </div>
+    <div class="loc-grid">
+      <div class="loc">
+        <div class="tag">Headquarter</div>
+        <h4>Venaria Reale (TO)</h4>
+        <p>Via V. Scodeggio, 1 — 10078</p>
+        <p><a href="tel:+39011496688">+39 011 496688</a></p>
+        <p style="color:#8B929B;font-size:13px">Fax +39 011 4594220</p>
+        <p style="margin-top:12px"><a class="maplink" href="https://www.google.com/maps/place/Ferrari+e+Carena/@45.1395959,7.6257608,19.25z">Apri in Google Maps →</a></p>
+      </div>
+      <div class="loc">
+        <div class="tag">Assemblaggio presse fine blanking</div>
+        <h4>Collegno (TO)</h4>
+        <p>Via Tommaseo, 65 — 10093</p>
+        <p><a href="tel:+390112055566">+39 011 2055566</a></p>
+        <p style="margin-top:12px"><a class="maplink" href="https://www.google.com/maps/place/Via+Niccol%C3%B2+Tommaseo,+65,+10093+Collegno+TO/@45.079633,7.594216,16z">Apri in Google Maps →</a></p>
+      </div>
+      <div class="loc">
+        <div class="tag">Reparto frese</div>
+        <h4>Venaria Reale (TO)</h4>
+        <p>Via Stefanat, 24 — 10078</p>
+        <p><a href="tel:+39011496688">+39 011 496688</a></p>
+        <p style="color:#8B929B;font-size:13px">Fax +39 011 4594220</p>
+        <p style="margin-top:12px"><a class="maplink" href="https://www.google.com/maps/place/Via+Stefanat+Bruno,+24,+10078+Venaria+Reale+TO/@45.14041,7.6286993,17.5z">Apri in Google Maps →</a></p>
+      </div>
+    </div>
+    <div class="emails">
+      <div class="em"><span class="role">Commerciale e richieste di offerta</span><a href="mailto:info@ferraricarena.it">info@ferraricarena.it</a></div>
+      <div class="em"><span class="role">Amministrazione / Contabilità</span><a href="mailto:amministrazione@ferraricarena.it">amministrazione@ferraricarena.it</a></div>
+      <div class="em"><span class="role">Disegni e materiale tecnico</span><a href="mailto:ufficiotecnico@ferraricarena.it">ufficiotecnico@ferraricarena.it</a></div>
+      <div class="em"><span class="role">Systems Division</span><a href="mailto:systemsdivision@ferraricarena.it">systemsdivision@ferraricarena.it</a></div>
+      <div class="em"><span class="role">Collaudo dimensionale</span><a href="mailto:collaudo@ferraricarena.it">collaudo@ferraricarena.it</a></div>
+      <div class="em"><span class="role">Torneria / Lavorazioni meccaniche</span><a href="mailto:lavorazioni@ferraricarena.it">lavorazioni@ferraricarena.it</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Ferrari & Carena s.r.l. — P.IVA 00736690017 — Tutti i diritti riservati</div>
+    <div class="links">
+      <a href="https://www.ferraricarena.it/paritadigenere.php">Parità di Genere</a>
+      <a href="https://www.ferraricarena.it/segnalazioni.php">Whistleblowing</a>
+      <a href="https://www.ferraricarenaplast.com/">F&C PLAST</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
